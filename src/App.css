@@ -1,38 +1,93 @@
 .App {
   text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  margin-top: 3.8rem;
+}
+.wrapper {
+  margin: 2rem;
+  background-color: #C7E8CA;
+  height: 75vh;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 0 2px rgb(199, 232, 202, 0.9);
+}
+header {
+  margin-top: 0.5rem;
+}
+.clockButtons {
+  height: 7vh;
+  width: 7vh;
+  margin-left: 5px;
+}
+.clockButtons:hover{
+  transform: scale(1.06);
+  cursor: pointer;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+  font-weight: bolder;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.clock {
+  font-family: 'Orbitron', sans-serif;
+  font-size:5rem;
+  font-weight: bolder;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.teams {
+  display: grid;
+  grid-template-columns: 0.1fr 1fr 1fr 0.1fr;
+  margin-left: 2rem;
+  margin-right: 2rem;
+ 
 }
 
-.App-link {
-  color: #61dafb;
+.team1Buttons {
+  grid-column: 1;
+  /* display: flex;
+  flex-direction: column; */
+}
+p {
+  color: #C7E8CA;
+  background-color: black;
+  font-size: 1.7rem;
+  font-weight: bold;
+  padding: 0.3rem 0.6rem;
+  font-family: 'Orbitron', sans-serif;
+  border-radius: 100%;
+  font-size: bold;
+
+}
+p:hover{
+  transform: scale(1.08);
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.team1 {
+  grid-column: 2;
+  border-right: 1px solid black;
 }
+
+.team2 {
+  grid-column: 3;
+}
+
+
+.team2Buttons {
+  grid-column: 4;
+  /* display: flex;
+  flex-direction: column; */
+
+}
+
+
+span {
+  border-radius: 5px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 4rem;
+  padding: 0 0.5rem;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.3);
+}
+

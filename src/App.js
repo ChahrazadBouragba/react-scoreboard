@@ -28,6 +28,7 @@ useEffect(() => {
 const handleStartStopClick = () => {
   setIsRunning(isRunning => !isRunning);
 };
+
   
 const handleResetClick = () => {
   setCurrentTime(0);
@@ -49,32 +50,49 @@ const handleResetClick = () => {
   return (
     <div className="App">
 
+    <div class="wrapper">
+
       <header>
           {/* <div>{currentDate.toString()}</div> */}
-          <button onClick={handleStartStopClick}>🌐</button>
-          <div id="clock">{formattedTime}</div>
+          {isRunning ? (
+            <img src="../img/pause (1).png" class="clockButtons" onClick={handleStartStopClick}/>
+            ) : (
+              <img class="clockButtons" src='../img/play-button.png' onClick={handleStartStopClick}/>
+              )}
+          
+          <img class="clockButtons" src="../img/reloading.png" onClick={handleResetClick}/>
+          
+          
+          <div className="clock">{formattedTime}</div>
       </header>
      
       <div class="teams">
-          <section class="team1">
-          <h2>team 1</h2>
-            {count1 >= count2 ? <span style={{color: "green"}}>{count1}</span> : <span style={{color: "red"}}>{count1}</span>}
-
-                <button onClick={() => setCount(count1 + 1)}> +1 </button>
-                <button onClick={() => setCount(count1 - 1)}>-1</button>
+            <div class="team1Buttons">
+                <p  onClick={() => setCount(count1 + 1)}> +1 </p>
+                <p onClick={() => setCount(count1 - 1)}>-1</p>
                 {/* <button onClick={() => setCount(count1 = 0)}>Set to Zero</button> */}
+            </div>
+          <section class="team1">
+            <h2>team 1</h2>
+            <span style={{ backgroundColor: count1 >= count2 ? "#5D9C59" : "#DF2E38" }}>{count1}</span>
+
           </section>
 
+          
           <section class="team2">
-          <h2>team 2</h2>
-          {count2 < count1 ? <span style={{color: "red"}}>{count2}</span> : <span style={{color: "green"}}>{count2}</span>}
-                <button onClick={() => setCount2(count2 + 1)}>+1</button>
-                <button onClick={() => setCount2(count2 - 1)}>-1</button>
-                {/* <button onClick={() => setCount2(count2 = 0)}>Set to Zero</button> */}
+            <h2>team 2</h2>
+            <span style={{ backgroundColor: count2 < count1 ? "#DF2E38" : "#5D9C59" }}>{count2}</span>
+            
           </section>
+          <div class="team2Buttons">
+            <p onClick={() => setCount2(count2 + 1)}>+1</p>
+            <p onClick={() => setCount2(count2 - 1)}>-1</p>
+                {/* <button onClick={() => setCount2(count2 = 0)}>Set to Zero</button> */}
+          </div>
       </div>
 
-      <button onClick={handleResetClick}>restart</button>
+
+      </div>
     </div>
   );
 }
